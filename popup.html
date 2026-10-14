@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Etsy Keyword Research Lab</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="logo">EK</div><div><h1>Etsy Keyword Lab</h1><p>40-method research workspace</p></div></header>
+<main>
+  <label for="seed">Seed keyword</label>
+  <div class="seedrow"><input id="seed" placeholder="e.g. mug mockup"><button id="generate">Generate</button></div>
+  <div class="row">
+    <label class="grow" for="category">Product type</label>
+    <select id="category"><option value="digital">Digital product</option><option value="physical">Physical product</option><option value="both">Both / unsure</option></select>
+  </div>
+  <section class="panel">
+    <div class="sectionhead"><h2>Research methods</h2><button class="link" id="allMethods">Select all</button></div>
+    <div id="methods" class="methods"></div>
+    <div class="row"><span id="selectedCount" class="muted">0 selected</span><button id="runMethods" class="secondary">Open selected sources</button></div>
+  </section>
+  <section class="panel">
+    <div class="sectionhead"><h2>Keyword ideas</h2><span id="ideaCount" class="muted">0 ideas</span></div>
+    <div id="ideas" class="ideas"><p class="empty">Enter a seed keyword and select Generate.</p></div>
+    <div class="actions"><button id="copy" class="secondary">Copy ideas</button><button id="export">Export CSV</button></div>
+  </section>
+  <section class="panel">
+    <h2>Opportunity validator</h2>
+    <p class="muted small">Enter evidence from RankKK, eRank, Etsy Marketplace Insights, Google, or other sources. Estimates from different tools are not interchangeable.</p>
+    <label for="keywordPick">Keyword to validate</label><select id="keywordPick"><option value="">Generate ideas first</option></select>
+    <div class="metricgrid">
+      <label>Competition<input id="competition" type="number" min="0" placeholder="e.g. 12000"></label>
+      <label>Avg views<input id="views" type="number" min="0" placeholder="e.g. 7000"></label>
+      <label>Avg price (USD)<input id="price" type="number" min="0" step=".01" placeholder="e.g. 4.99"></label>
+      <label>Favs / view (%)<input id="favrate" type="number" min="0" step=".01" placeholder="e.g. 1.5"></label>
+      <label>Keyword difficulty<input id="kd" type="number" min="0" max="100" placeholder="e.g. 35"></label>
+      <label>Google volume<select id="google"><option value="">Not checked</option><option value="good">Green / Good</option><option value="bad">Not green / poor</option></select></label>
+      <label>12-month trend<select id="trend"><option value="">Not checked</option><option value="stable">Stable</option><option value="growing">Growing</option><option value="declining">Declining</option></select></label>
+      <label>Target-country demand<select id="countries"><option value="">Not checked</option><option value="yes">US / UK / CA / DE present</option><option value="no">Not confirmed</option></select></label>
+    </div>
+    <label for="evidence">Evidence / source URLs / notes</label><textarea id="evidence" rows="2" placeholder="Record source, date checked, and screenshots/URLs..."></textarea>
+    <div class="actions"><button id="validate">Validate keyword</button><button id="save" class="secondary">Save record</button></div>
+    <div id="result" class="result muted">No keyword validated yet.</div>
+  </section>
+  <section class="panel">
+    <div class="sectionhead"><h2>Saved research</h2><button id="exportSaved" class="link">Export saved CSV</button></div>
+    <div id="saved" class="saved muted">No saved records yet.</div>
+  </section>
+  <footer>Research assistant, not an Etsy API. Search volume and sales are not guaranteed. Respect Etsy terms and rate limits.</footer>
+</main>
+<script src="methods.js"></script>
+<script src="popup.js"></script>
+</body></html>

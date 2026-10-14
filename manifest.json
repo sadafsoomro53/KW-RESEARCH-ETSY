@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Etsy Keyword Research Lab",
+  "version": "0.1.0",
+  "description": "Research Etsy keyword ideas using 40 workflows, validate opportunities, and export evidence.",
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "downloads"],
+  "host_permissions": ["https://www.etsy.com/*"],
+  "action": {"default_popup": "popup.html", "default_title": "Etsy Keyword Research Lab"},
+  "content_scripts": [{
+    "matches": ["https://www.etsy.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}
